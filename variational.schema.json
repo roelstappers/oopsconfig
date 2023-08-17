@@ -1,0 +1,112 @@
+{
+    "type": "object",
+    "properties": {
+        "iteration": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "resolution": {
+                            "type": "object",
+                            "properties": {
+                                "namelist": {
+                                    "type": "string"
+                                },
+                                "orogfile": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "namelist",
+                                "orogfile"
+                            ]
+                        },
+                        "linearmodel": {
+                            "type": "object",
+                            "properties": {
+                                "version": {
+                                    "type": "string"
+                                },
+                                "namelist": {
+                                    "type": "string"
+                                },
+                                "tstep": {
+                                    "type": "string"
+                                },
+                                "trajectory": {
+                                    "type": "object",
+                                    "properties": {
+                                        "namelist": {
+                                            "type": "string"
+                                        },
+                                        "tstep": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "namelist",
+                                        "tstep"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "version",
+                                "namelist",
+                                "tstep",
+                                "trajectory"
+                            ]
+                        },
+                        "ninner": {
+                            "type": "string"
+                        },
+                        "gradient_norm_reduction": {
+                            "type": "string"
+                        },
+                        "onlineDiagnostics": {
+                            "type": "object",
+                            "properties": {
+                                "tlmApproxTest": {
+                                    "type": "string"
+                                },
+                                "tlmTaylorTest": {
+                                    "type": "string"
+                                },
+                                "tlmPropagTest": {
+                                    "type": "string"
+                                },
+                                "adjTlmTest": {
+                                    "type": "string"
+                                },
+                                "adjObsTest": {
+                                    "type": "string"
+                                },
+                                "onlineAdjTest": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "tlmApproxTest",
+                                "tlmTaylorTest",
+                                "tlmPropagTest",
+                                "adjTlmTest",
+                                "adjObsTest",
+                                "onlineAdjTest"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "resolution",
+                        "linearmodel",
+                        "ninner",
+                        "gradient_norm_reduction",
+                        "onlineDiagnostics"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "iteration"
+    ]
+}

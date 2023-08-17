@@ -1,0 +1,221 @@
+{
+    "$schema": "mainschema.json",
+    "logging": {
+        "categories": "Trace,Info, Debug, Warning, Error"
+    },
+    "expver": "OOPS",
+    "resolution": {
+        "namelist": "fort.4",
+        "orogfile": "ICMSHOOPSINIT"
+    },
+    "model": {
+        "namelist": "fort.4",
+        "tstep": "PT1800S"
+    },
+    "cost_function": {
+        "window_length": "PT0H",
+        "window_begin": "$DTG_ISO8601",
+        "window_sub": "PT1H",
+        "variables": "1",
+        "cost_type": "4D-Ens-Var",
+        "Jb": {
+            "Background": {
+                "state": [
+                    {
+                        "date": "$DTG_ISO8601",
+                        "term": "PT0H",
+                        "ifile": "0",
+                        "variables": "0",
+                        "expver": "OOPS"
+                    }
+                ],
+                "ModelBias": {},
+                "ObsBias": {
+                    "filename": "no-varbc"
+                }
+            },
+            "Covariance": {
+               "covariance": "ensemble",
+               "localization": {
+                    "loc_type": "1",
+                    "levl_001": "1",
+                    "hlen_001": "100000",
+                    "levl_002": "66",
+                    "hlen_002": "100000",
+                    "v_length_scale": "0.2"
+                },
+                "ensemble": [
+                    {
+                        "members": "16",
+                        "inflation": "1.5",
+                        "variables": "1",
+                        "sub_ens": "1",
+                        "state": [
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr001/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr002/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr003/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr004/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr005/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr006/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr007/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr008/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr009/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr010/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr011/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr012/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr013/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr014/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr015/ICMSHHARM+0003.allgp",
+                                "dont_check_last_file": "yes"
+                            },
+                            {
+                                "ifile": "1",
+                                "expver": "unused",
+                                "filename": "$prevARCHIVEdate/mbr016/ICMSHHARM+0003.allgp",
+                                "check_last_file": "yes"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ObsBiasCovariance": {
+                "filename": "no-varbc"
+            },
+            "ModelBiasCovariance": {}
+        },
+        "Jo": [
+            {
+                "timeslot": "PT1H",
+                "Observation": {
+                    "naml_obs_setup": "fort.4",
+                    "local_geom_obs_space": {
+                        "namelist": "fort.4",
+                        "orogfile": "ICMSHOOPSINIT"
+                    },
+                    "ObsType": "AllObs",
+                    "ObsData": {
+                        "obsvalue": "obsvalue",
+                        "hofx": "ombg",
+                        "ombg": "ombg",
+                        "oman": "fg_depar@body"
+                    }
+                },
+                "Covariance": {
+                    "obserror": "obserror",
+                    "covariance": "AllObsError"
+                }
+            }
+        ]
+    },
+    "variational": {
+        "iteration": [
+            {
+                "resolution": {
+                    "namelist": "fort.4",
+                    "orogfile": "ICMSHOOPSINIT"
+                },
+                "linearmodel": {
+                    "version": "IfsTLM",
+                    "namelist": "fort.4",
+                    "tstep": "PT1800S",
+                    "trajectory": {
+                        "namelist": "fort.4",
+                        "tstep": "PT1800S"
+                    }
+                },
+                "ninner": "40",
+                "gradient_norm_reduction": "0.00000001"
+            }
+        ]
+    },
+    "minimizer": {
+        "algorithm": "PLanczosJ"
+    },
+    "mimic_masterodb_oman": "true",
+    "output": {
+        "state": [
+            {
+                "namelist": "fort.4",
+                "steps": "PT0S"
+            }
+        ]
+    },
+    "final": {
+        "diagnostics": {
+            "departures": "an_depar@body"
+        }
+    }
+}

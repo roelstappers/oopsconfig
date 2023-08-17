@@ -1,0 +1,213 @@
+ {
+      "type": "object",
+      "properties": {
+        "window_length": {
+          "type": "string"
+        },
+        "window_begin": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "string"
+        },
+        "cost_type": {
+          "type": "string"
+        },
+        "Jb": {
+          "type": "object",
+          "properties": {
+            "Background": {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "date": {
+                          "type": "string"
+                        },
+                        "term": {
+                          "type": "string"
+                        },
+                        "ifile": {
+                          "type": "string"
+                        },
+                        "variables": {
+                          "type": "string"
+                        },
+                        "expver": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "date",
+                        "term",
+                        "ifile",
+                        "variables",
+                        "expver"
+                      ]
+                    }
+                  ]
+                },
+                "ModelBias": {
+                  "type": "object"
+                },
+                "ObsBias": {
+                  "type": "object",
+                  "properties": {
+                    "filename": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "filename"
+                  ]
+                }
+              },
+              "required": [
+                "state",
+                "ModelBias",
+                "ObsBias"
+              ]
+            },
+            "Covariance": {
+              "type": "object",
+              "properties": {
+                "covariance": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "namelist": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "covariance",
+                "date",
+                "namelist"
+              ]
+            },
+            "ObsBiasCovariance": {
+              "type": "object",
+              "properties": {
+                "filename": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "filename"
+              ]
+            },
+            "ModelBiasCovariance": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "Background",
+            "Covariance",
+            "ObsBiasCovariance",
+            "ModelBiasCovariance"
+          ]
+        },
+        "Jo": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "timeslot": {
+                  "type": "string"
+                },
+                "Observation": {
+                  "type": "object",
+                  "properties": {
+                    "naml_obs_setup": {
+                      "type": "string"
+                    },
+                    "local_geom_obs_space": {
+                      "type": "object",
+                      "properties": {
+                        "namelist": {
+                          "type": "string"
+                        },
+                        "orogfile": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "namelist",
+                        "orogfile"
+                      ]
+                    },
+                    "ObsType": {
+                      "type": "string"
+                    },
+                    "ObsData": {
+                      "type": "object",
+                      "properties": {
+                        "obsvalue": {
+                          "type": "string"
+                        },
+                        "hofx": {
+                          "type": "string"
+                        },
+                        "ombg": {
+                          "type": "string"
+                        },
+                        "oman": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "obsvalue",
+                        "hofx",
+                        "ombg",
+                        "oman"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "naml_obs_setup",
+                    "local_geom_obs_space",
+                    "ObsType",
+                    "ObsData"
+                  ]
+                },
+                "Covariance": {
+                  "type": "object",
+                  "properties": {
+                    "obserror": {
+                      "type": "string"
+                    },
+                    "covariance": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "obserror",
+                    "covariance"
+                  ]
+                }
+              },
+              "required": [
+                "timeslot",
+                "Observation",
+                "Covariance"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "window_length",
+        "window_begin",
+        "variables",
+        "cost_type",
+        "Jb",
+        "Jo"
+      ]
+    }

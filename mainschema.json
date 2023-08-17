@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "logging": {
+      "$ref": "logging.schema.json"
+    },
+    "expver": {
+      "type": "string"
+    },
+    "resolution": {
+      "$ref": "resolution.schema.json"
+    },
+    "model": {
+      "$ref": "model.schema.json"
+    },
+    "cost_function": {
+      "$ref": "costfunction.schema.json"
+    },
+    "variational": {
+      "$ref": "variational.schema.json"
+    },
+    "minimizer": {
+      "$ref": "minimizer.schema.json"
+    },
+    "output": {
+      "$ref": "output.schema.json"
+    },
+    "final": {
+      "$ref": "final.schema.json"
+    }
+  },
+  "required": [
+    "logging",
+    "expver",
+    "resolution",
+    "model",
+    "cost_function",
+    "variational",
+    "minimizer",
+    "output",
+    "final"
+  ]
+}

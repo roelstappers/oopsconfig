@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "diagnostics": {
+            "type": "object",
+            "properties": {
+                "departures": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "departures"
+            ]
+        }
+    },
+    "required": [
+        "diagnostics"
+    ]
+}

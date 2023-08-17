@@ -1,0 +1,111 @@
+{
+    "logging": {
+        "categories": "$LOGGING"
+    },
+    "expver": "OOPS",
+    "resolution": {
+        "namelist": "fort.4",
+        "orogfile": "ICMSHOOPSINIT"
+    },
+    "model": {
+        "namelist": "fort.4",
+        "tstep": "PT1800S"
+    },
+    "cost_function": {
+        "window_length": "PT0H",
+        "window_begin": "$DTG_ISO8601",
+        "variables": "1",
+        "cost_type": "3D-Var",
+        "Jb": {
+            "Background": {
+                "state": [
+                    {
+                        "date": "$DTG_ISO8601",
+                        "term": "PT0H",
+                        "ifile": "0",
+                        "variables": "0",
+                        "expver": "OOPS"
+                    }
+                ],
+                "ModelBias": {},
+                "ObsBias": {
+                    "filename": "VARBC.cycle"
+                }
+            },
+            "Covariance": {
+                "covariance": "static",
+                "date": "$DTG_ISO8601",
+                "namelist": "fort.4"
+            },
+            "ObsBiasCovariance": {
+                "filename": "VARBC.cycle"
+            },
+            "ModelBiasCovariance": {}
+        },
+        "Jo": [
+            {
+                "timeslot": "PT1H",
+                "Observation": {
+                    "naml_obs_setup": "fort.4",
+                    "local_geom_obs_space": {
+                        "namelist": "fort.4",
+                        "orogfile": "ICMSHOOPSINIT"
+                    },
+                    "ObsType": "AllObs",
+                    "ObsData": {
+                        "obsvalue": "obsvalue",
+                        "hofx": "ombg",
+                        "ombg": "ombg",
+                        "oman": "fg_depar@body"
+                    }
+                },
+                "Covariance": {
+                    "obserror": "obserror",
+                    "covariance": "AllObsError"
+                }
+            }
+        ]
+    },
+    "variational": {
+        "iteration": [
+            {
+                "resolution": {
+                    "namelist": "fort.4",
+                    "orogfile": "ICMSHOOPSINIT"
+                },
+                "linearmodel": {
+                    "version": "IfsTLM",
+                    "namelist": "fort.4",
+                    "tstep": "PT1800S",
+                    "trajectory": {
+                        "namelist": "fort.4",
+                        "tstep": "PT1800S"
+                    }
+                },
+                "ninner": "20",
+                "gradient_norm_reduction": "0.00001",
+		"onlineDiagnostics" : {
+                   "tlmApproxTest":"false",
+                   "tlmTaylorTest":"false",
+                   "tlmPropagTest":"false",
+                   "adjTlmTest":"false",
+                   "adjObsTest":"true",
+                   "onlineAdjTest":"true"
+
+	        }
+            }
+        ]
+    },
+    "minimizer": {
+        "algorithm": "SQRTPLanczos"
+    },
+    "output": {
+        "namelist": "fort.4",
+        "steps": "PT0S"
+    },
+    "final": {
+        "diagnostics": {
+            "departures": "an_depar@body"
+        }
+    }
+}
